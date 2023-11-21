@@ -82,6 +82,7 @@
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
+            this.btnIntro = new System.Windows.Forms.Button();
             this.tblMain.SuspendLayout();
             this.tblToolbar.SuspendLayout();
             this.tblDisplay.SuspendLayout();
@@ -661,11 +662,25 @@
             this.btn1.TabIndex = 0;
             this.btn1.UseVisualStyleBackColor = true;
             // 
+            // btnIntro
+            // 
+            this.btnIntro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnIntro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnIntro.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnIntro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnIntro.Location = new System.Drawing.Point(0, 0);
+            this.btnIntro.Name = "btnIntro";
+            this.btnIntro.Size = new System.Drawing.Size(800, 450);
+            this.btnIntro.TabIndex = 1;
+            this.btnIntro.Text = "Click Anywhere to Begin";
+            this.btnIntro.UseVisualStyleBackColor = false;
+            // 
             // frmBlindFind
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnIntro);
             this.Controls.Add(this.tblMain);
             this.Name = "frmBlindFind";
             this.Text = "frmBlindFind";
@@ -733,5 +748,6 @@
         private Button btn3;
         private Button btn2;
         private Button btn1;
+        private Button btnIntro;
     }
 }
