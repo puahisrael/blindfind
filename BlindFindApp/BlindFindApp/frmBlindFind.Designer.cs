@@ -32,6 +32,7 @@
             this.tblToolbar = new System.Windows.Forms.TableLayoutPanel();
             this.btnGameStage = new System.Windows.Forms.Button();
             this.lblScore = new System.Windows.Forms.Label();
+            this.btnEnter = new System.Windows.Forms.Button();
             this.tblDisplay = new System.Windows.Forms.TableLayoutPanel();
             this.btn49 = new System.Windows.Forms.Button();
             this.btn48 = new System.Windows.Forms.Button();
@@ -106,11 +107,13 @@
             // tblToolbar
             // 
             this.tblToolbar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tblToolbar.ColumnCount = 2;
-            this.tblToolbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblToolbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblToolbar.ColumnCount = 3;
+            this.tblToolbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tblToolbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tblToolbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblToolbar.Controls.Add(this.btnGameStage, 0, 0);
-            this.tblToolbar.Controls.Add(this.lblScore, 1, 0);
+            this.tblToolbar.Controls.Add(this.lblScore, 2, 0);
+            this.tblToolbar.Controls.Add(this.btnEnter, 1, 0);
             this.tblToolbar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblToolbar.Location = new System.Drawing.Point(3, 3);
             this.tblToolbar.Name = "tblToolbar";
@@ -122,11 +125,11 @@
             // btnGameStage
             // 
             this.btnGameStage.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGameStage.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnGameStage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGameStage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGameStage.Location = new System.Drawing.Point(3, 3);
             this.btnGameStage.Name = "btnGameStage";
-            this.btnGameStage.Size = new System.Drawing.Size(242, 33);
+            this.btnGameStage.Size = new System.Drawing.Size(258, 33);
             this.btnGameStage.TabIndex = 0;
             this.btnGameStage.Text = "Start";
             this.btnGameStage.UseVisualStyleBackColor = false;
@@ -137,12 +140,26 @@
             this.lblScore.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblScore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblScore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblScore.Location = new System.Drawing.Point(400, 0);
+            this.lblScore.Location = new System.Drawing.Point(531, 0);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(391, 39);
+            this.lblScore.Size = new System.Drawing.Size(260, 39);
             this.lblScore.TabIndex = 1;
             this.lblScore.Text = "Score: ";
             this.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnEnter
+            // 
+            this.btnEnter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEnter.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEnter.FlatAppearance.BorderSize = 5;
+            this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEnter.Location = new System.Drawing.Point(267, 3);
+            this.btnEnter.Name = "btnEnter";
+            this.btnEnter.Size = new System.Drawing.Size(258, 33);
+            this.btnEnter.TabIndex = 2;
+            this.btnEnter.Text = "Enter";
+            this.btnEnter.UseVisualStyleBackColor = true;
             // 
             // tblDisplay
             // 
@@ -221,6 +238,7 @@
             // btn49
             // 
             this.btn49.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn49.ForeColor = System.Drawing.Color.White;
             this.btn49.Location = new System.Drawing.Point(681, 345);
             this.btn49.Name = "btn49";
             this.btn49.Size = new System.Drawing.Size(110, 51);
@@ -230,6 +248,7 @@
             // btn48
             // 
             this.btn48.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn48.ForeColor = System.Drawing.Color.White;
             this.btn48.Location = new System.Drawing.Point(568, 345);
             this.btn48.Name = "btn48";
             this.btn48.Size = new System.Drawing.Size(107, 51);
@@ -239,6 +258,7 @@
             // btn47
             // 
             this.btn47.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn47.ForeColor = System.Drawing.Color.White;
             this.btn47.Location = new System.Drawing.Point(455, 345);
             this.btn47.Name = "btn47";
             this.btn47.Size = new System.Drawing.Size(107, 51);
@@ -248,6 +268,7 @@
             // btn46
             // 
             this.btn46.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn46.ForeColor = System.Drawing.Color.White;
             this.btn46.Location = new System.Drawing.Point(342, 345);
             this.btn46.Name = "btn46";
             this.btn46.Size = new System.Drawing.Size(107, 51);
@@ -257,6 +278,7 @@
             // btn45
             // 
             this.btn45.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn45.ForeColor = System.Drawing.Color.White;
             this.btn45.Location = new System.Drawing.Point(229, 345);
             this.btn45.Name = "btn45";
             this.btn45.Size = new System.Drawing.Size(107, 51);
@@ -265,17 +287,20 @@
             // 
             // btn44
             // 
+            this.btn44.BackColor = System.Drawing.Color.White;
             this.btn44.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn44.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn44.Location = new System.Drawing.Point(116, 345);
             this.btn44.Name = "btn44";
             this.btn44.Size = new System.Drawing.Size(107, 51);
             this.btn44.TabIndex = 43;
-            this.btn44.UseVisualStyleBackColor = true;
+            this.btn44.UseVisualStyleBackColor = false;
             // 
             // btn43
             // 
-            this.btn43.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn43.BackColor = System.Drawing.Color.White;
             this.btn43.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn43.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn43.Location = new System.Drawing.Point(3, 345);
             this.btn43.Name = "btn43";
             this.btn43.Size = new System.Drawing.Size(107, 51);
@@ -285,6 +310,7 @@
             // btn42
             // 
             this.btn42.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn42.ForeColor = System.Drawing.Color.White;
             this.btn42.Location = new System.Drawing.Point(681, 288);
             this.btn42.Name = "btn42";
             this.btn42.Size = new System.Drawing.Size(110, 51);
@@ -294,6 +320,7 @@
             // btn41
             // 
             this.btn41.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn41.ForeColor = System.Drawing.Color.White;
             this.btn41.Location = new System.Drawing.Point(568, 288);
             this.btn41.Name = "btn41";
             this.btn41.Size = new System.Drawing.Size(107, 51);
@@ -303,6 +330,7 @@
             // btn40
             // 
             this.btn40.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn40.ForeColor = System.Drawing.Color.White;
             this.btn40.Location = new System.Drawing.Point(455, 288);
             this.btn40.Name = "btn40";
             this.btn40.Size = new System.Drawing.Size(107, 51);
@@ -312,6 +340,7 @@
             // btn39
             // 
             this.btn39.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn39.ForeColor = System.Drawing.Color.White;
             this.btn39.Location = new System.Drawing.Point(342, 288);
             this.btn39.Name = "btn39";
             this.btn39.Size = new System.Drawing.Size(107, 51);
@@ -321,6 +350,7 @@
             // btn38
             // 
             this.btn38.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn38.ForeColor = System.Drawing.Color.White;
             this.btn38.Location = new System.Drawing.Point(229, 288);
             this.btn38.Name = "btn38";
             this.btn38.Size = new System.Drawing.Size(107, 51);
@@ -329,223 +359,266 @@
             // 
             // btn37
             // 
+            this.btn37.BackColor = System.Drawing.Color.White;
             this.btn37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn37.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn37.Location = new System.Drawing.Point(116, 288);
             this.btn37.Name = "btn37";
             this.btn37.Size = new System.Drawing.Size(107, 51);
             this.btn37.TabIndex = 36;
-            this.btn37.UseVisualStyleBackColor = true;
+            this.btn37.UseVisualStyleBackColor = false;
             // 
             // btn36
             // 
+            this.btn36.BackColor = System.Drawing.Color.White;
             this.btn36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn36.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn36.Location = new System.Drawing.Point(3, 288);
             this.btn36.Name = "btn36";
             this.btn36.Size = new System.Drawing.Size(107, 51);
             this.btn36.TabIndex = 35;
-            this.btn36.UseVisualStyleBackColor = true;
+            this.btn36.UseVisualStyleBackColor = false;
             // 
             // btn35
             // 
+            this.btn35.BackColor = System.Drawing.Color.White;
             this.btn35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn35.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn35.Location = new System.Drawing.Point(681, 231);
             this.btn35.Name = "btn35";
             this.btn35.Size = new System.Drawing.Size(110, 51);
             this.btn35.TabIndex = 34;
-            this.btn35.UseVisualStyleBackColor = true;
+            this.btn35.UseVisualStyleBackColor = false;
             // 
             // btn34
             // 
+            this.btn34.BackColor = System.Drawing.Color.White;
             this.btn34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn34.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn34.Location = new System.Drawing.Point(568, 231);
             this.btn34.Name = "btn34";
             this.btn34.Size = new System.Drawing.Size(107, 51);
             this.btn34.TabIndex = 33;
-            this.btn34.UseVisualStyleBackColor = true;
+            this.btn34.UseVisualStyleBackColor = false;
             // 
             // btn33
             // 
+            this.btn33.BackColor = System.Drawing.Color.White;
             this.btn33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn33.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn33.Location = new System.Drawing.Point(455, 231);
             this.btn33.Name = "btn33";
             this.btn33.Size = new System.Drawing.Size(107, 51);
             this.btn33.TabIndex = 32;
-            this.btn33.UseVisualStyleBackColor = true;
+            this.btn33.UseVisualStyleBackColor = false;
             // 
             // btn32
             // 
+            this.btn32.BackColor = System.Drawing.Color.White;
             this.btn32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn32.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn32.Location = new System.Drawing.Point(342, 231);
             this.btn32.Name = "btn32";
             this.btn32.Size = new System.Drawing.Size(107, 51);
             this.btn32.TabIndex = 31;
-            this.btn32.UseVisualStyleBackColor = true;
+            this.btn32.UseVisualStyleBackColor = false;
             // 
             // btn31
             // 
+            this.btn31.BackColor = System.Drawing.Color.White;
             this.btn31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn31.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn31.Location = new System.Drawing.Point(229, 231);
             this.btn31.Name = "btn31";
             this.btn31.Size = new System.Drawing.Size(107, 51);
             this.btn31.TabIndex = 30;
-            this.btn31.UseVisualStyleBackColor = true;
+            this.btn31.UseVisualStyleBackColor = false;
             // 
             // btn30
             // 
+            this.btn30.BackColor = System.Drawing.Color.White;
             this.btn30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn30.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn30.Location = new System.Drawing.Point(116, 231);
             this.btn30.Name = "btn30";
             this.btn30.Size = new System.Drawing.Size(107, 51);
             this.btn30.TabIndex = 29;
-            this.btn30.UseVisualStyleBackColor = true;
+            this.btn30.UseVisualStyleBackColor = false;
             // 
             // btn29
             // 
+            this.btn29.BackColor = System.Drawing.Color.White;
             this.btn29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn29.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn29.Location = new System.Drawing.Point(3, 231);
             this.btn29.Name = "btn29";
             this.btn29.Size = new System.Drawing.Size(107, 51);
             this.btn29.TabIndex = 28;
-            this.btn29.UseVisualStyleBackColor = true;
+            this.btn29.UseVisualStyleBackColor = false;
             // 
             // btn28
             // 
+            this.btn28.BackColor = System.Drawing.Color.White;
             this.btn28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn28.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn28.Location = new System.Drawing.Point(681, 174);
             this.btn28.Name = "btn28";
             this.btn28.Size = new System.Drawing.Size(110, 51);
             this.btn28.TabIndex = 27;
-            this.btn28.UseVisualStyleBackColor = true;
+            this.btn28.UseVisualStyleBackColor = false;
             // 
             // btn27
             // 
+            this.btn27.BackColor = System.Drawing.Color.White;
             this.btn27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn27.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn27.Location = new System.Drawing.Point(568, 174);
             this.btn27.Name = "btn27";
             this.btn27.Size = new System.Drawing.Size(107, 51);
             this.btn27.TabIndex = 26;
-            this.btn27.UseVisualStyleBackColor = true;
+            this.btn27.UseVisualStyleBackColor = false;
             // 
             // btn26
             // 
+            this.btn26.BackColor = System.Drawing.Color.White;
             this.btn26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn26.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn26.Location = new System.Drawing.Point(455, 174);
             this.btn26.Name = "btn26";
             this.btn26.Size = new System.Drawing.Size(107, 51);
             this.btn26.TabIndex = 25;
-            this.btn26.UseVisualStyleBackColor = true;
+            this.btn26.UseVisualStyleBackColor = false;
             // 
             // btn25
             // 
+            this.btn25.BackColor = System.Drawing.Color.White;
             this.btn25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn25.Location = new System.Drawing.Point(342, 174);
             this.btn25.Name = "btn25";
             this.btn25.Size = new System.Drawing.Size(107, 51);
             this.btn25.TabIndex = 24;
-            this.btn25.UseVisualStyleBackColor = true;
+            this.btn25.UseVisualStyleBackColor = false;
             // 
             // btn24
             // 
+            this.btn24.BackColor = System.Drawing.Color.White;
             this.btn24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn24.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn24.Location = new System.Drawing.Point(229, 174);
             this.btn24.Name = "btn24";
             this.btn24.Size = new System.Drawing.Size(107, 51);
             this.btn24.TabIndex = 23;
-            this.btn24.UseVisualStyleBackColor = true;
+            this.btn24.UseVisualStyleBackColor = false;
             // 
             // btn23
             // 
+            this.btn23.BackColor = System.Drawing.Color.White;
             this.btn23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn23.Location = new System.Drawing.Point(116, 174);
             this.btn23.Name = "btn23";
             this.btn23.Size = new System.Drawing.Size(107, 51);
             this.btn23.TabIndex = 22;
-            this.btn23.UseVisualStyleBackColor = true;
+            this.btn23.UseVisualStyleBackColor = false;
             // 
             // btn22
             // 
+            this.btn22.BackColor = System.Drawing.Color.White;
             this.btn22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn22.Location = new System.Drawing.Point(3, 174);
             this.btn22.Name = "btn22";
             this.btn22.Size = new System.Drawing.Size(107, 51);
             this.btn22.TabIndex = 21;
-            this.btn22.UseVisualStyleBackColor = true;
+            this.btn22.UseVisualStyleBackColor = false;
             // 
             // btn21
             // 
+            this.btn21.BackColor = System.Drawing.Color.White;
             this.btn21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn21.Location = new System.Drawing.Point(681, 117);
             this.btn21.Name = "btn21";
             this.btn21.Size = new System.Drawing.Size(110, 51);
             this.btn21.TabIndex = 20;
-            this.btn21.UseVisualStyleBackColor = true;
+            this.btn21.UseVisualStyleBackColor = false;
             // 
             // btn20
             // 
+            this.btn20.BackColor = System.Drawing.Color.White;
             this.btn20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn20.Location = new System.Drawing.Point(568, 117);
             this.btn20.Name = "btn20";
             this.btn20.Size = new System.Drawing.Size(107, 51);
             this.btn20.TabIndex = 19;
-            this.btn20.UseVisualStyleBackColor = true;
+            this.btn20.UseVisualStyleBackColor = false;
             // 
             // btn19
             // 
+            this.btn19.BackColor = System.Drawing.Color.White;
             this.btn19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn19.Location = new System.Drawing.Point(455, 117);
             this.btn19.Name = "btn19";
             this.btn19.Size = new System.Drawing.Size(107, 51);
             this.btn19.TabIndex = 18;
-            this.btn19.UseVisualStyleBackColor = true;
+            this.btn19.UseVisualStyleBackColor = false;
             // 
             // btn18
             // 
+            this.btn18.BackColor = System.Drawing.Color.White;
             this.btn18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn18.Location = new System.Drawing.Point(342, 117);
             this.btn18.Name = "btn18";
             this.btn18.Size = new System.Drawing.Size(107, 51);
             this.btn18.TabIndex = 17;
-            this.btn18.UseVisualStyleBackColor = true;
+            this.btn18.UseVisualStyleBackColor = false;
             // 
             // btn17
             // 
+            this.btn17.BackColor = System.Drawing.Color.White;
             this.btn17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn17.Location = new System.Drawing.Point(229, 117);
             this.btn17.Name = "btn17";
             this.btn17.Size = new System.Drawing.Size(107, 51);
             this.btn17.TabIndex = 16;
-            this.btn17.UseVisualStyleBackColor = true;
+            this.btn17.UseVisualStyleBackColor = false;
             // 
             // btn16
             // 
+            this.btn16.BackColor = System.Drawing.Color.White;
             this.btn16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn16.Location = new System.Drawing.Point(116, 117);
             this.btn16.Name = "btn16";
             this.btn16.Size = new System.Drawing.Size(107, 51);
             this.btn16.TabIndex = 15;
-            this.btn16.UseVisualStyleBackColor = true;
+            this.btn16.UseVisualStyleBackColor = false;
             // 
             // btn15
             // 
+            this.btn15.BackColor = System.Drawing.Color.White;
             this.btn15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn15.Location = new System.Drawing.Point(3, 117);
             this.btn15.Name = "btn15";
             this.btn15.Size = new System.Drawing.Size(107, 51);
             this.btn15.TabIndex = 14;
-            this.btn15.UseVisualStyleBackColor = true;
+            this.btn15.UseVisualStyleBackColor = false;
             // 
             // btn14
             // 
+            this.btn14.BackColor = System.Drawing.Color.White;
             this.btn14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn14.Location = new System.Drawing.Point(681, 60);
             this.btn14.Name = "btn14";
             this.btn14.Size = new System.Drawing.Size(110, 51);
             this.btn14.TabIndex = 13;
-            this.btn14.UseVisualStyleBackColor = true;
+            this.btn14.UseVisualStyleBackColor = false;
             // 
             // btn13
             // 
-            this.btn13.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn13.BackColor = System.Drawing.Color.White;
             this.btn13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn13.Location = new System.Drawing.Point(568, 60);
             this.btn13.Name = "btn13";
@@ -555,117 +628,130 @@
             // 
             // btn12
             // 
+            this.btn12.BackColor = System.Drawing.Color.White;
             this.btn12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn12.Location = new System.Drawing.Point(455, 60);
             this.btn12.Name = "btn12";
             this.btn12.Size = new System.Drawing.Size(107, 51);
             this.btn12.TabIndex = 11;
-            this.btn12.UseVisualStyleBackColor = true;
+            this.btn12.UseVisualStyleBackColor = false;
             // 
             // btn11
             // 
+            this.btn11.BackColor = System.Drawing.Color.White;
             this.btn11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn11.Location = new System.Drawing.Point(342, 60);
             this.btn11.Name = "btn11";
             this.btn11.Size = new System.Drawing.Size(107, 51);
             this.btn11.TabIndex = 10;
-            this.btn11.UseVisualStyleBackColor = true;
+            this.btn11.UseVisualStyleBackColor = false;
             // 
             // btn10
             // 
+            this.btn10.BackColor = System.Drawing.Color.White;
             this.btn10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn10.Location = new System.Drawing.Point(229, 60);
             this.btn10.Name = "btn10";
             this.btn10.Size = new System.Drawing.Size(107, 51);
             this.btn10.TabIndex = 9;
-            this.btn10.UseVisualStyleBackColor = true;
+            this.btn10.UseVisualStyleBackColor = false;
             // 
             // btn9
             // 
+            this.btn9.BackColor = System.Drawing.Color.White;
             this.btn9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn9.Location = new System.Drawing.Point(116, 60);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(107, 51);
             this.btn9.TabIndex = 8;
-            this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.UseVisualStyleBackColor = false;
             // 
             // btn8
             // 
+            this.btn8.BackColor = System.Drawing.Color.White;
             this.btn8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn8.Location = new System.Drawing.Point(3, 60);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(107, 51);
             this.btn8.TabIndex = 7;
-            this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.UseVisualStyleBackColor = false;
             // 
             // btn7
             // 
+            this.btn7.BackColor = System.Drawing.Color.White;
             this.btn7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn7.Location = new System.Drawing.Point(681, 3);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(110, 51);
             this.btn7.TabIndex = 6;
-            this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.UseVisualStyleBackColor = false;
             // 
             // btn6
             // 
+            this.btn6.BackColor = System.Drawing.Color.White;
             this.btn6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn6.Location = new System.Drawing.Point(568, 3);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(107, 51);
             this.btn6.TabIndex = 5;
-            this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.UseVisualStyleBackColor = false;
             // 
             // btn5
             // 
+            this.btn5.BackColor = System.Drawing.Color.White;
             this.btn5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn5.Location = new System.Drawing.Point(455, 3);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(107, 51);
             this.btn5.TabIndex = 4;
-            this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.UseVisualStyleBackColor = false;
             // 
             // btn4
             // 
+            this.btn4.BackColor = System.Drawing.Color.White;
             this.btn4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn4.Location = new System.Drawing.Point(342, 3);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(107, 51);
             this.btn4.TabIndex = 3;
-            this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.UseVisualStyleBackColor = false;
             // 
             // btn3
             // 
             this.btn3.AccessibleDescription = "";
+            this.btn3.BackColor = System.Drawing.Color.White;
             this.btn3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn3.Location = new System.Drawing.Point(229, 3);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(107, 51);
             this.btn3.TabIndex = 2;
-            this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.UseVisualStyleBackColor = false;
             // 
             // btn2
             // 
+            this.btn2.BackColor = System.Drawing.Color.White;
             this.btn2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn2.Location = new System.Drawing.Point(116, 3);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(107, 51);
             this.btn2.TabIndex = 1;
-            this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.UseVisualStyleBackColor = false;
             // 
             // btn1
             // 
+            this.btn1.BackColor = System.Drawing.Color.White;
             this.btn1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn1.Location = new System.Drawing.Point(3, 3);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(107, 51);
             this.btn1.TabIndex = 0;
-            this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.UseVisualStyleBackColor = false;
             // 
             // btnIntro
             // 
             this.btnIntro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIntro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnIntro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnIntro.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnIntro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnIntro.Location = new System.Drawing.Point(0, 0);
@@ -749,5 +835,6 @@
         private Button btn2;
         private Button btn1;
         private Button btnIntro;
+        private Button btnEnter;
     }
 }

@@ -3,6 +3,7 @@ namespace BlindFindApp
     public partial class frmBlindFind : Form
     {
         List<Button> lstbuttons;
+        List<Button> lstblackbuttons;
 
         public frmBlindFind()
         {
@@ -17,16 +18,16 @@ namespace BlindFindApp
                 btn41, btn42, btn43, btn44, btn45, btn46, btn47, btn48, btn49
             };
 
+
             lstbuttons.ForEach(b => b.Click += SelectButton_Click);
+            btnEnter.Click += BtnEnter_Click;
             btnIntro.Click += BtnIntro_Click;
             btnGameStage.Click += BtnGameStage_Click;
         }
 
-
         private void GameIntro()
         {
             DateTime starttime = DateTime.Now;
-            //GetInstructions();
             if (btnIntro.Text == "Click Anywhere to Begin")
             {
                 btnIntro.Text = "Instructions";
@@ -41,25 +42,69 @@ namespace BlindFindApp
 
         private void ChangeToRandomColor()
         {
+
+
+            lstbuttons.ForEach(b => b.BackColor = Color.White);
             Random r = new();
             DateTime starttime = DateTime.Now;
-            Color c = Color.FromArgb(r.Next(0, 255), r.Next(0, 255), r.Next(0, 255));
             lstbuttons.OrderBy(x => r.Next()).Take(5).ToList().ForEach(b => b.BackColor = Color.Black);
-            lstbuttons.Where(b => b.BackColor != Color.Black).ToList().ForEach(b => b.BackColor = c);
+            for (int i = 1; i < 45; i++)
+            {
+                Color c = Color.FromArgb(r.Next(0, 255), r.Next(0, 255), r.Next(0, 255));
+                lstbuttons.Where(b => b.BackColor == Color.White).ToList().OrderBy(x => r.Next()).Take(1).ToList().ForEach(b => b.BackColor = c);
+            }
             while ((DateTime.Now - starttime).TotalSeconds <= 5)
             {
                 Application.DoEvents();
             }
             lstbuttons.ForEach(b => b.BackColor = Color.White);
 
+            lstblackbuttons = new();
+            lstblackbuttons.AddRange(lstbuttons.Where(b => b.BackColor == Color.Black));
+
+            //List<Button> CaptureBlackButtons()
+            //{
+            //    List<Button> lstblack = new();
+            //    lstblack = lstbuttons.Where(b => b.BackColor == Color.Black).ToList();
+            //    return lstblack;
+            //}
+            //CaptureBlackButtons();
+            //Create new list to capture buttons which turn black
+            //Func<List<Button>, List<Button>> CaptureBlackButtons = lstblack => lstblack = lstbuttons.Where(b => b.BackColor == Color.Black).ToList();
+            //List<Button> lstblack = new();
+            //lstblack = lstbuttons.Where(b => b.BackColor == Color.Black).ToList();
+            //return lstblack;
         }
 
+     
+        //private void CaptureBlackButtons(List<Button> lst)
+        //{
+        //    //List<Button> lst = lstblackbuttons.ToList();
+        //    //lst = lstbuttons.Where(b => b.BackColor == Color.Black).ToList();
+
+        //    //var newlst = new List<Button>(lstblackbuttons);
+        //    //if (lstbuttons.Where(b => b.BackColor == Color.Black).ToList() != lst.Where(b => b.BackColor == Color.Black))
+        //    //{
+        //    //    lst.ForEach(b => b.BackColor = Color.Red);
+
+        //    //}
+        //}
         private void UserSelects(Button btn)
         {
-            //figure out how to let user only choose five!
-            if(btn.BackColor == Color.White)
+            if (lstbuttons.Count(b => b.BackColor == Color.Black) < 5)
             {
-                btn.BackColor = Color.Black;
+                if (btn.BackColor == Color.White)
+                {
+                    btn.BackColor = Color.Black;
+                }
+                else
+                {
+                    btn.BackColor = Color.White;
+                }
+            }
+            else
+            {
+                btn.BackColor = Color.White;
             }
             //let user pick only five buttons - disable other controls
             //allow for change of mind - maybe create enter button so user can decide when to enter response
@@ -68,10 +113,10 @@ namespace BlindFindApp
 
         private void DoRound()
         {
+            ChangeToRandomColor();
             //if (btnGameStage.Text == "Start")
             //{
             // btnGameStage.Text = "Next Round";
-            ChangeToRandomColor();
 
             //}
         }
@@ -82,9 +127,26 @@ namespace BlindFindApp
         }
 
 
+
+        private void BtnEnter_Click(object? sender, EventArgs e)
+        {
+            List<Button> newlist = new();
+            newlist = lstbuttons.Where(b => b.BackColor == Color.Black).ToList();
+            if (lstblackbuttons != newlist)
+            {
+                lstbuttons.ForEach(b => b.BackColor = Color.Red);
+            }
+            //lstbuttons.ForEach(b => b.Enabled = false);
+            //DetectWinningButtons()
+            //List<Button> lstblack = ;
+            //lstblack.ForEach(b => b.BackColor = Color.Black);
+
+            //maybe chained ienumerable - check if black buttons in lstbuttons are same as buttons in lstblack
+        }
+
         private void SelectButton_Click(object? sender, EventArgs e)
         {
-            if(sender is Button)
+            if (sender is Button)
             {
                 UserSelects((Button)sender);
             }
@@ -100,5 +162,6 @@ namespace BlindFindApp
             //eventually change this to DoTurn
             DoRound();
         }
+
     }
 }
