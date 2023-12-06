@@ -11,8 +11,6 @@ namespace BlindFindApp
 
         Button btnPlayAgain = new();
 
-        List<Button> lstintrobuttons;
-
         List<Button> lstbuttons;
 
         public frmBlindFind()
@@ -128,6 +126,7 @@ namespace BlindFindApp
             else
             {
                 DisplayFinalScore();
+
                 btnPlayAgain.Visible = true;
                 btnPlayAgain.AutoSize = true;
                 btnPlayAgain.Anchor = AnchorStyles.None;
@@ -152,21 +151,14 @@ namespace BlindFindApp
 
         private void BtnEnter_Click(object? sender, EventArgs e)
         {
-            if (lstbuttons.Where(b => b.BackColor == Color.Black).ToList().Count() == 5)
+            if (lstbuttons.Where(b => b.BackColor == Color.Black).ToList().Count() == 5 && lstbuttons.Where(b => b.BackColor != Color.Black).ToList().Where(b => b.BackColor == Color.White).ToList().Count() == 44)
             {
                 List<Button> newlist = new();
                 lstbuttons.Where(b => b.ForeColor == Color.LimeGreen).ToList().ForEach(b => { b.FlatAppearance.BorderColor = Color.LimeGreen; b.FlatAppearance.BorderSize = 10; b.FlatStyle = FlatStyle.Flat; });
                 newlist = lstbuttons.Where(b => b.BackColor == Color.Black).ToList();
                 newlist.Where(b => b.ForeColor == Color.LimeGreen).ToList().ForEach(b => b.Text = "\u2713");
                 lblScoreNumber.Text = (int.Parse(lblScoreNumber.Text) + newlist.Where(b => b.ForeColor == Color.LimeGreen).ToList().Count()).ToString();
-                if (btnGameStage.Text != "Round 10")
-                {
-                    btnGameStage.Text = "Next Round";
-                }
-                else
-                {
-                    btnGameStage.Text = "Game Over";
-                }
+                btnGameStage.Text = btnGameStage.Text != "Round 10" ? "Next Round" : "Game Over";
             }
         }
 
@@ -188,7 +180,7 @@ namespace BlindFindApp
                            "2)  5 of the buttons in the grid will turn black. The rest of the buttons will each adopt a new random color. The buttons will remain like this for 5 seconds before returning to white." + Environment.NewLine + Environment.NewLine +
                            "3)  Press the 5 buttons which you believe have previously turned black (to unselect - click again). Press 'Enter'." + Environment.NewLine + Environment.NewLine +
                            "4)  The correct selections will be marked and the scoreboard will be updated accordingly (one point for each correct selection). Press 'Next Round'." + Environment.NewLine + Environment.NewLine +
-                           "5)  Repeat steps 1-4 for the next ten rounds." + Environment.NewLine + Environment.NewLine +
+                           "5)  Repeat steps 1-4 for the next 9 rounds." + Environment.NewLine + Environment.NewLine +
                            "6)  See final score. Then play again to beat your record!" + Environment.NewLine + Environment.NewLine + Environment.NewLine +
                            "HAVE FUN!";
 
@@ -235,8 +227,11 @@ namespace BlindFindApp
 
         private void BtnGameStage_Click(object? sender, EventArgs e)
         {
-            ++count;
-            DoTurn();
+            if(btnGameStage.Text == "Start" || btnGameStage.Text == "Next Round")
+            {
+                ++count;
+                DoTurn();
+            }
         }
     }
 }
