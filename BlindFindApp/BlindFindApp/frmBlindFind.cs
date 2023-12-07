@@ -209,7 +209,7 @@ namespace BlindFindApp
                 BackColor = Color.White,
                 ForeColor = Color.Black,
                 Dock = DockStyle.None,
-                Location = new Point(1300, 600),
+                Location = new Point(1300, 600), 
                 Height = 200,
                 Width = 500,
                 Text = "Start Game"
