@@ -222,7 +222,7 @@ namespace BlindFindApp
         private void Btnstartgame_Click(object? sender, EventArgs e)
         {
             btnIntro.Controls.Clear();
-            btnIntro.Visible = false;
+            btnIntro.Visible = false; 
         }
 
         private void BtnIntro_Click(object? sender, EventArgs e)
