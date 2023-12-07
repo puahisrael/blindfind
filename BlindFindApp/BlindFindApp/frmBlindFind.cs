@@ -239,7 +239,7 @@ namespace BlindFindApp
                     ++count;
                     DoTurn();
                 }
-            }
+            } 
             else
             {
                 count = 0;
