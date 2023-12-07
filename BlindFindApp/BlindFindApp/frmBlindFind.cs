@@ -217,7 +217,7 @@ namespace BlindFindApp
             lblinstructions.Controls.Add(btnstartgame);
 
             btnstartgame.Click += Btnstartgame_Click;
-        }
+        } 
 
         private void Btnstartgame_Click(object? sender, EventArgs e)
         {
