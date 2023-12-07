@@ -38,7 +38,7 @@ namespace BlindFindApp
             DateTime starttime = DateTime.Now;
             while ((DateTime.Now - starttime).TotalSeconds <= 2)
             {
-                btnIntro.Text = "Get Ready!";
+                btnIntro.Text = "Get Ready!!";
                 Application.DoEvents();
             }
             btnIntro.Visible = false;
