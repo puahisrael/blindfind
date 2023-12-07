@@ -246,6 +246,6 @@ namespace BlindFindApp
                 count++;
                 DoTurn();
             }
-        }
+        } 
     }
 }
