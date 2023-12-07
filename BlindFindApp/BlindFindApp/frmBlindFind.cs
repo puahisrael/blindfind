@@ -10,13 +10,11 @@ namespace BlindFindApp
         int count;
 
         Button btnPlayAgain = new();
-
         List<Button> lstbuttons;
 
         public frmBlindFind()
         {
             InitializeComponent();
-
 
             lstbuttons = new()
             {
@@ -59,9 +57,14 @@ namespace BlindFindApp
             }
             while ((DateTime.Now - starttime).TotalSeconds <= 5)
             {
+                btnInstructions.Enabled = false;
+                btnEnter.Enabled = false;
+                lstbuttons.ForEach(b => b.Enabled = false);
                 Application.DoEvents();
             }
-            lstbuttons.ForEach(b => b.BackColor = Color.White);
+            btnInstructions.Enabled = true;
+            btnEnter.Enabled = true;
+            lstbuttons.ForEach(b => { b.Enabled = true; b.BackColor = Color.White; });
         }
 
         private void UserSelects(Button btn)
@@ -143,10 +146,12 @@ namespace BlindFindApp
 
         private void BtnPlayAgain_Click(object? sender, EventArgs e)
         {
+
+
             btnIntro.Visible = false;
             btnGameStage.Text = "Start";
             lstbuttons.ForEach(b => { b.BackColor = Color.White; b.ForeColor = Color.Black; b.FlatStyle = FlatStyle.Standard; b.Text = ""; });
-            lblScoreNumber.Text = "";
+            lblScoreNumber.Text = "0";
         }
 
         private void BtnEnter_Click(object? sender, EventArgs e)
@@ -227,9 +232,18 @@ namespace BlindFindApp
 
         private void BtnGameStage_Click(object? sender, EventArgs e)
         {
-            if(btnGameStage.Text == "Start" || btnGameStage.Text == "Next Round")
+            if (count < 11)
             {
-                ++count;
+                if (btnGameStage.Text == "Start" || btnGameStage.Text == "Next Round" || btnGameStage.Text == "Game Over")
+                {
+                    ++count;
+                    DoTurn();
+                }
+            }
+            else
+            {
+                count = 0;
+                count++;
                 DoTurn();
             }
         }
