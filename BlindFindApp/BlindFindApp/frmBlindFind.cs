@@ -9,7 +9,35 @@ namespace BlindFindApp
     {
         int count;
 
-        Button btnPlayAgain = new();
+        Label lblinstructions = new()
+        {
+            Dock = DockStyle.Fill
+        };
+
+        Button btnstartgame = new()
+        {
+            BackColor = Color.White,
+            ForeColor = Color.Black,
+            Dock = DockStyle.None,
+            Location = new Point(1300, 600),
+            Height = 200,
+            Width = 500,
+            Text = "Start Game"
+        };
+
+        Button btnPlayAgain = new()
+        {
+            Visible = true,
+            AutoSize = true,
+            Anchor = AnchorStyles.None,
+            Location = new Point(800, 700),
+            Height = 100,
+            Width = 300,
+            BackColor = Color.White,
+            ForeColor = Color.Black,
+            Text = "Play Again?"
+        };
+
         List<Button> lstbuttons;
 
         public frmBlindFind()
@@ -30,6 +58,9 @@ namespace BlindFindApp
             btnIntro.Click += BtnIntro_Click;
             btnInstructions.Click += BtnInstructions_Click;
             btnGameStage.Click += BtnGameStage_Click;
+
+            lstbuttons.ForEach(b => b.Enabled = false);
+            btnEnter.Enabled = false;
         }
 
 
@@ -81,17 +112,26 @@ namespace BlindFindApp
 
         private void DoRound()
         {
-            switch (btnGameStage.Text)
+            lstbuttons.ForEach(b => b.Enabled = true);
+            btnEnter.Enabled = true;
+            btnGameStage.Text = "Round " + count;
+            ChangeToRandomColor();
+        }
+        private void DoTurn()
+        {
+            if (count < 11)
             {
-                case "Play Again":
-                    btnIntro.Visible = true;
-                    btnIntro.Text = "Play Again!";
-                    break;
-                default:
-                    btnGameStage.Text = "Round " + count;
-                    ChangeToRandomColor();
-                    break;
+                DoRound();
             }
+        }
+        private void MarkSelections()
+        {
+            List<Button> newlist = new();
+            lstbuttons.Where(b => b.ForeColor == Color.LimeGreen).ToList().ForEach(b => { b.FlatAppearance.BorderColor = Color.LimeGreen; b.FlatAppearance.BorderSize = 10; b.FlatStyle = FlatStyle.Flat; });
+            newlist = lstbuttons.Where(b => b.BackColor == Color.Black).ToList();
+            newlist.Where(b => b.ForeColor == Color.LimeGreen).ToList().ForEach(b => b.Text = "\u2713");
+            lblScoreNumber.Text = (int.Parse(lblScoreNumber.Text) + newlist.Where(b => b.ForeColor == Color.LimeGreen).ToList().Count()).ToString();
+            btnGameStage.Text = "Next Round";
         }
 
         private void DisplayFinalScore()
@@ -117,62 +157,11 @@ namespace BlindFindApp
             {
                 msg = "Come on! You can do better...";
             }
+
             btnIntro.Text = "Final Score: " + Environment.NewLine + lblScoreNumber.Text + " / 50" + Environment.NewLine + Environment.NewLine + msg;
-        }
 
-        private void DoTurn()
-        {
-            if (count < 11)
-            {
-                DoRound();
-            }
-            else
-            {
-                DisplayFinalScore();
-
-                btnPlayAgain.Visible = true;
-                btnPlayAgain.AutoSize = true;
-                btnPlayAgain.Anchor = AnchorStyles.None;
-                btnPlayAgain.Location = new Point(800, 700);
-                btnPlayAgain.Height = 100;
-                btnPlayAgain.Width = 300;
-                btnPlayAgain.BackColor = Color.White;
-                btnPlayAgain.ForeColor = Color.Black;
-                btnPlayAgain.Text = "Play Again?";
-                btnIntro.Controls.Add(btnPlayAgain);
-                btnPlayAgain.Click += BtnPlayAgain_Click;
-            }
-        }
-
-        private void BtnPlayAgain_Click(object? sender, EventArgs e)
-        {
-
-
-            btnIntro.Visible = false;
-            btnGameStage.Text = "Start";
-            lstbuttons.ForEach(b => { b.BackColor = Color.White; b.ForeColor = Color.Black; b.FlatStyle = FlatStyle.Standard; b.Text = ""; });
-            lblScoreNumber.Text = "0";
-        }
-
-        private void BtnEnter_Click(object? sender, EventArgs e)
-        {
-            if (lstbuttons.Where(b => b.BackColor == Color.Black).ToList().Count() == 5 && lstbuttons.Where(b => b.BackColor != Color.Black).ToList().Where(b => b.BackColor == Color.White).ToList().Count() == 44)
-            {
-                List<Button> newlist = new();
-                lstbuttons.Where(b => b.ForeColor == Color.LimeGreen).ToList().ForEach(b => { b.FlatAppearance.BorderColor = Color.LimeGreen; b.FlatAppearance.BorderSize = 10; b.FlatStyle = FlatStyle.Flat; });
-                newlist = lstbuttons.Where(b => b.BackColor == Color.Black).ToList();
-                newlist.Where(b => b.ForeColor == Color.LimeGreen).ToList().ForEach(b => b.Text = "\u2713");
-                lblScoreNumber.Text = (int.Parse(lblScoreNumber.Text) + newlist.Where(b => b.ForeColor == Color.LimeGreen).ToList().Count()).ToString();
-                btnGameStage.Text = btnGameStage.Text != "Round 10" ? "Next Round" : "Game Over";
-            }
-        }
-
-        private void SelectButton_Click(object? sender, EventArgs e)
-        {
-            if (sender is Button)
-            {
-                UserSelects((Button)sender);
-            }
+            btnIntro.Controls.Add(btnPlayAgain);
+            btnPlayAgain.Click += BtnPlayAgain_Click;
         }
 
         private string GetInstructions()
@@ -192,37 +181,65 @@ namespace BlindFindApp
             return instructions;
         }
 
+        private void BtnPlayAgain_Click(object? sender, EventArgs e)
+        {
+            btnIntro.Visible = false;
+            btnGameStage.Text = "Start";
+            lstbuttons.ForEach(b => { b.BackColor = Color.White; b.ForeColor = Color.Black; b.FlatStyle = FlatStyle.Standard; b.Text = ""; });
+            lblScoreNumber.Text = "0";
+        }
+
+        private void BtnEnter_Click(object? sender, EventArgs e)
+        {
+            if (lstbuttons.Where(b => b.BackColor == Color.Black).ToList().Count() == 5 && lstbuttons.Where(b => b.BackColor != Color.Black).ToList().Where(b => b.BackColor == Color.White).ToList().Count() == 44)
+            {
+                if (btnGameStage.Text == "Round 10")
+                {
+                    DisplayFinalScore();
+                }
+                else
+                {
+                    MarkSelections();
+                }
+            }
+        }
+
+        private void SelectButton_Click(object? sender, EventArgs e)
+        {
+            if (sender is Button)
+            {
+                UserSelects((Button)sender);
+            }
+        }
+
+        private void BtnGameStage_Click(object? sender, EventArgs e)
+        {
+            if (btnGameStage.Text == "Start" || btnGameStage.Text == "Next Round")
+            {
+                if (count > 11)
+                {
+                    count = 0;
+                }
+                count++;
+                DoTurn();
+            }
+        }
+
         private void BtnInstructions_Click(object? sender, EventArgs e)
         {
             btnIntro.Visible = true;
             btnPlayAgain.Visible = false;
-
-            Label lblinstructions = new()
-            {
-                Dock = DockStyle.Fill,
-                Text = GetInstructions()
-            };
+            lblinstructions.Text = GetInstructions();
             btnIntro.Controls.Add(lblinstructions);
-
-            Button btnstartgame = new()
-            {
-                BackColor = Color.White,
-                ForeColor = Color.Black,
-                Dock = DockStyle.None,
-                Location = new Point(1300, 600), 
-                Height = 200,
-                Width = 500,
-                Text = "Start Game"
-            };
             lblinstructions.Controls.Add(btnstartgame);
 
-            btnstartgame.Click += Btnstartgame_Click;
-        } 
+            btnstartgame.Click += BtnStartGame_Click;
+        }
 
-        private void Btnstartgame_Click(object? sender, EventArgs e)
+        private void BtnStartGame_Click(object? sender, EventArgs e)
         {
             btnIntro.Controls.Clear();
-            btnIntro.Visible = false; 
+            btnIntro.Visible = false;
         }
 
         private void BtnIntro_Click(object? sender, EventArgs e)
@@ -230,22 +247,5 @@ namespace BlindFindApp
             GameIntro();
         }
 
-        private void BtnGameStage_Click(object? sender, EventArgs e)
-        {
-            if (count < 11)
-            {
-                if (btnGameStage.Text == "Start" || btnGameStage.Text == "Next Round" || btnGameStage.Text == "Game Over")
-                {
-                    ++count;
-                    DoTurn();
-                }
-            }
-            else
-            {
-                count = 0;
-                count++;
-                DoTurn();
-            }
-        }
     }
 }

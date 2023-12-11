@@ -289,6 +289,7 @@
             // 
             // btn49
             // 
+            this.btn49.BackColor = System.Drawing.Color.White;
             this.btn49.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn49.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn49.ForeColor = System.Drawing.Color.Black;
@@ -296,10 +297,11 @@
             this.btn49.Name = "btn49";
             this.btn49.Size = new System.Drawing.Size(110, 51);
             this.btn49.TabIndex = 48;
-            this.btn49.UseVisualStyleBackColor = true;
+            this.btn49.UseVisualStyleBackColor = false;
             // 
             // btn48
             // 
+            this.btn48.BackColor = System.Drawing.Color.White;
             this.btn48.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn48.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn48.ForeColor = System.Drawing.Color.Black;
@@ -307,10 +309,11 @@
             this.btn48.Name = "btn48";
             this.btn48.Size = new System.Drawing.Size(107, 51);
             this.btn48.TabIndex = 47;
-            this.btn48.UseVisualStyleBackColor = true;
+            this.btn48.UseVisualStyleBackColor = false;
             // 
             // btn47
             // 
+            this.btn47.BackColor = System.Drawing.Color.White;
             this.btn47.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn47.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn47.ForeColor = System.Drawing.Color.Black;
@@ -318,10 +321,11 @@
             this.btn47.Name = "btn47";
             this.btn47.Size = new System.Drawing.Size(107, 51);
             this.btn47.TabIndex = 46;
-            this.btn47.UseVisualStyleBackColor = true;
+            this.btn47.UseVisualStyleBackColor = false;
             // 
             // btn46
             // 
+            this.btn46.BackColor = System.Drawing.Color.White;
             this.btn46.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn46.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn46.ForeColor = System.Drawing.Color.Black;
@@ -329,10 +333,11 @@
             this.btn46.Name = "btn46";
             this.btn46.Size = new System.Drawing.Size(107, 51);
             this.btn46.TabIndex = 45;
-            this.btn46.UseVisualStyleBackColor = true;
+            this.btn46.UseVisualStyleBackColor = false;
             // 
             // btn45
             // 
+            this.btn45.BackColor = System.Drawing.Color.White;
             this.btn45.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn45.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn45.ForeColor = System.Drawing.Color.Black;
@@ -340,7 +345,7 @@
             this.btn45.Name = "btn45";
             this.btn45.Size = new System.Drawing.Size(107, 51);
             this.btn45.TabIndex = 44;
-            this.btn45.UseVisualStyleBackColor = true;
+            this.btn45.UseVisualStyleBackColor = false;
             // 
             // btn44
             // 
@@ -368,6 +373,7 @@
             // 
             // btn42
             // 
+            this.btn42.BackColor = System.Drawing.Color.White;
             this.btn42.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn42.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn42.ForeColor = System.Drawing.Color.Black;
@@ -375,10 +381,11 @@
             this.btn42.Name = "btn42";
             this.btn42.Size = new System.Drawing.Size(110, 51);
             this.btn42.TabIndex = 41;
-            this.btn42.UseVisualStyleBackColor = true;
+            this.btn42.UseVisualStyleBackColor = false;
             // 
             // btn41
             // 
+            this.btn41.BackColor = System.Drawing.Color.White;
             this.btn41.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn41.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn41.ForeColor = System.Drawing.Color.Black;
@@ -386,10 +393,11 @@
             this.btn41.Name = "btn41";
             this.btn41.Size = new System.Drawing.Size(107, 51);
             this.btn41.TabIndex = 40;
-            this.btn41.UseVisualStyleBackColor = true;
+            this.btn41.UseVisualStyleBackColor = false;
             // 
             // btn40
             // 
+            this.btn40.BackColor = System.Drawing.Color.White;
             this.btn40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn40.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn40.ForeColor = System.Drawing.Color.Black;
@@ -397,10 +405,11 @@
             this.btn40.Name = "btn40";
             this.btn40.Size = new System.Drawing.Size(107, 51);
             this.btn40.TabIndex = 39;
-            this.btn40.UseVisualStyleBackColor = true;
+            this.btn40.UseVisualStyleBackColor = false;
             // 
             // btn39
             // 
+            this.btn39.BackColor = System.Drawing.Color.White;
             this.btn39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn39.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn39.ForeColor = System.Drawing.Color.Black;
@@ -408,10 +417,11 @@
             this.btn39.Name = "btn39";
             this.btn39.Size = new System.Drawing.Size(107, 51);
             this.btn39.TabIndex = 38;
-            this.btn39.UseVisualStyleBackColor = true;
+            this.btn39.UseVisualStyleBackColor = false;
             // 
             // btn38
             // 
+            this.btn38.BackColor = System.Drawing.Color.White;
             this.btn38.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn38.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn38.ForeColor = System.Drawing.Color.Black;
@@ -419,7 +429,7 @@
             this.btn38.Name = "btn38";
             this.btn38.Size = new System.Drawing.Size(107, 51);
             this.btn38.TabIndex = 37;
-            this.btn38.UseVisualStyleBackColor = true;
+            this.btn38.UseVisualStyleBackColor = false;
             // 
             // btn37
             // 
