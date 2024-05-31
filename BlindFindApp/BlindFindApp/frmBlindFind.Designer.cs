@@ -879,14 +879,13 @@
             // btnIntro
             // 
             this.btnIntro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIntro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnIntro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnIntro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIntro.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnIntro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnIntro.Location = new System.Drawing.Point(0, 0);
+            this.btnIntro.Location = new System.Drawing.Point(590, 279);
             this.btnIntro.Name = "btnIntro";
-            this.btnIntro.Size = new System.Drawing.Size(800, 450);
+            this.btnIntro.Size = new System.Drawing.Size(210, 171);
             this.btnIntro.TabIndex = 1;
             this.btnIntro.Text = "Blind Find \r\n\r\n(Click Anywhere to Begin)";
             this.btnIntro.UseVisualStyleBackColor = false;
