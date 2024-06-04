@@ -49,6 +49,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiFont Remove="Resources\Fonts\COOPBL.TTF" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\COOPBL.TTF" />
+	  <None Remove="Resources\Fonts\OCRAEXT.TTF" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="BlindFind.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

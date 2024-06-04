@@ -2,6 +2,80 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BlindFindMaui.BlindFind"
-             Title="BlindFind">
-    <!-- DO IT!!! -->
+             Title="BlindFind"
+             Shell.BackgroundColor="White"
+             Shell.TitleColor="Black"
+             >
+    <ContentPage.Resources>
+        <Style TargetType="Button" x:Key="top_buttons" CanCascade="True">
+            <Setter Property="BorderColor" Value="Black"/>
+            <Setter Property="BorderWidth" Value="10"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+    <Grid ColumnDefinitions="*" RowDefinitions="*,8*">
+        <Grid Grid.Row="0" Margin="5" ColumnDefinitions="auto,*,*,*" RowDefinitions="*" ColumnSpacing="10">
+            <Button Grid.Column="0" Text="Instructions" Style="{StaticResource Key=top_buttons}"/>
+            <Button Grid.Column="1" Text="Start" Style="{StaticResource Key=top_buttons}"/>
+            <Button Grid.Column="2" Text="Enter" Style="{StaticResource Key=top_buttons}"/>
+            <Border Grid.Column="3" Padding="0" Stroke="Black" StrokeThickness="5">
+            <VerticalStackLayout>
+                <Label TextColor="White" Text="Score:" BackgroundColor="Black"/>
+                <Label BackgroundColor="White" />
+            </VerticalStackLayout>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="1" Margin="5" ColumnDefinitions="*,*,*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*" ColumnSpacing="7" RowSpacing="7" BackgroundColor="Black" Padding="5">
+            <Button Grid.Column="0" Grid.Row="0"/>
+            <Button Grid.Column="1" Grid.Row="0"/>
+            <Button Grid.Column="2" Grid.Row="0"/>
+            <Button Grid.Column="3" Grid.Row="0"/>
+            <Button Grid.Column="4" Grid.Row="0"/>
+            <Button Grid.Column="5" Grid.Row="0"/>
+            <Button Grid.Column="6" Grid.Row="0"/>
+            <Button Grid.Column="0" Grid.Row="1"/>
+            <Button Grid.Column="1" Grid.Row="1"/>
+            <Button Grid.Column="2" Grid.Row="1"/>
+            <Button Grid.Column="3" Grid.Row="1"/>
+            <Button Grid.Column="4" Grid.Row="1"/>
+            <Button Grid.Column="5" Grid.Row="1"/>
+            <Button Grid.Column="6" Grid.Row="1"/>
+            <Button Grid.Column="0" Grid.Row="2"/>
+            <Button Grid.Column="1" Grid.Row="2"/>
+            <Button Grid.Column="2" Grid.Row="2"/>
+            <Button Grid.Column="3" Grid.Row="2"/>
+            <Button Grid.Column="4" Grid.Row="2"/>
+            <Button Grid.Column="5" Grid.Row="2"/>
+            <Button Grid.Column="6" Grid.Row="2"/>
+            <Button Grid.Column="0" Grid.Row="3"/>
+            <Button Grid.Column="1" Grid.Row="3"/>
+            <Button Grid.Column="2" Grid.Row="3"/>
+            <Button Grid.Column="3" Grid.Row="3"/>
+            <Button Grid.Column="4" Grid.Row="3"/>
+            <Button Grid.Column="5" Grid.Row="3"/>
+            <Button Grid.Column="6" Grid.Row="3"/>
+            <Button Grid.Column="0" Grid.Row="4"/>
+            <Button Grid.Column="1" Grid.Row="4"/>
+            <Button Grid.Column="2" Grid.Row="4"/>
+            <Button Grid.Column="3" Grid.Row="4"/>
+            <Button Grid.Column="4" Grid.Row="4"/>
+            <Button Grid.Column="5" Grid.Row="4"/>
+            <Button Grid.Column="6" Grid.Row="4"/>
+            <Button Grid.Column="0" Grid.Row="5"/>
+            <Button Grid.Column="1" Grid.Row="5"/>
+            <Button Grid.Column="2" Grid.Row="5"/>
+            <Button Grid.Column="3" Grid.Row="5"/>
+            <Button Grid.Column="4" Grid.Row="5"/>
+            <Button Grid.Column="5" Grid.Row="5"/>
+            <Button Grid.Column="6" Grid.Row="5"/>
+            <Button Grid.Column="0" Grid.Row="6"/>
+            <Button Grid.Column="1" Grid.Row="6"/>
+            <Button Grid.Column="2" Grid.Row="6"/>
+            <Button Grid.Column="3" Grid.Row="6"/>
+            <Button Grid.Column="4" Grid.Row="6"/>
+            <Button Grid.Column="5" Grid.Row="6"/>
+            <Button Grid.Column="6" Grid.Row="6"/>
+        </Grid>
+        <Border Grid.Row="1" Margin="5"/>
+    </Grid>
 </ContentPage>
